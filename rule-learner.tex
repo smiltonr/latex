@@ -1,0 +1,35 @@
+% \documentclass{article}
+
+% \usepackage{tikz}
+% \usetikzlibrary{arrows,shapes.geometric,shapes.symbols,scopes}
+
+% \colorlet{DarkRed}{red!70!black}
+% \colorlet{DarkBlue}{blue!70!black}
+% \colorlet{DarkGreen}{green!50!black}
+
+% \begin{document}
+
+% Define block styles
+\tikzstyle{block} = [rectangle, draw, draw=DarkBlue, inner
+color=DarkBlue!0!white, outer color=DarkBlue!15!white,
+text width=10em, thick,text centered, minimum height=2em] %
+
+%\tikzstyle{line} = [draw, -latex']%
+\tikzstyle{oval} = [rectangle, draw, draw=DarkGreen, fill=green!10, text width=10em, thick, text centered, rounded corners, minimum height=2em] %
+\tikzstyle{arrow} = [thick,draw=DarkGreen,->,>=stealth]
+
+\begin{tikzpicture}[node distance = 1.7cm, auto]
+  % Place nodes
+  \node [oval](in) {IE Extractions};
+  \node [block, below of=in] (pc) {Predicate Counting};
+  \node [block, below of=pc] (dg) {Graph Construction};
+  \node [block, below of=dg] (gr) {Ground Rules Generation};
+  \node [oval, below of=gr] (for) {First Order Rules};
+  
+  % Draw edges
+  \draw [arrow] (in) -- (pc);
+  \draw [arrow] (pc) -- (dg);
+  \draw [arrow] (dg) -- (gr);
+  \draw [arrow] (gr) -- (for);
+\end{tikzpicture}
+%\end{document}

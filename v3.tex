@@ -1,0 +1,269 @@
+% Version 3: Highlight boxes
+\documentclass[11pt]{beamer}
+
+\usetheme{Frankfurt}
+\setbeamertemplate{navigation symbols}{}
+\logo{\includegraphics[height=0.5cm]{ssn.jpg}}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes.geometric,shapes.symbols,scopes}
+\usetikzlibrary{chains,decorations.pathmorphing,positioning,fit}
+\usetikzlibrary{decorations.shapes,calc,backgrounds}
+\usetikzlibrary{decorations.text,matrix}
+\usetikzlibrary{mindmap}
+\usetikzlibrary{fadings}
+
+\colorlet{LightRed}{red!20}
+\colorlet{LightGreen}{green!20}
+\colorlet{LightBlue}{blue!20}
+\colorlet{DarkRed}{red!70!black}
+\colorlet{DarkBlue}{blue!70!black}
+\colorlet{DarkGreen}{green!50!black}
+\colorlet{AlertColor}{red}
+
+\tikzstyle{block1} = [%
+    rectangle,%
+    draw=DarkBlue,%
+    thick,%
+    inner color=DarkBlue!0!white,%
+    outer color=DarkBlue!15!white,
+    text width=#1,%
+    text centered,%
+    minimum height=2em] %
+
+\tikzstyle{block2} = [%
+    rectangle,%
+    draw=#1,%
+    thick,%
+    inner color=#1!0!white,%
+    outer color=#1!15!white,
+    text width=\linewidth,%
+    text centered,%
+    minimum height=2em] %
+
+\tikzstyle{oval} = [%
+    rectangle,%
+    draw=DarkRed,%
+    thick,%
+    inner color=DarkRed!0!white,%
+    outer color=DarkRed!15!white,%
+    text width=10em,%
+    text centered,%
+    rounded corners,%
+    minimum height=2em] %
+
+\tikzstyle{arrow} = [%
+   thick,%
+   ->,%
+   >=stealth]
+
+\title{Presentation in LaTeX}
+\author{R S Milton}
+\institute{
+  Department of Computer Science\\
+  SSN College of Engineering
+}
+
+\date{2 July 2014}
+
+%-- document begins --%
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+
+\section{Quick presentation}
+
+\begin{frame}{Simple presentation}
+  Why LaTeX?\\
+  \begin{tikzpicture}
+    \node[block2=DarkBlue]{With LaTeX Beamer, we can make consistently
+      looking presentation.};
+  \end{tikzpicture}
+  \begin{itemize}
+  \item Use \texttt{beamer} class.
+  \item Choose a theme.
+  \item Otherwise, usual LaTeX.
+  \end{itemize}
+\end{frame}
+
+\section[Stepwise]{Layers}
+
+\begin{frame}
+  \frametitle{Pause}
+  \begin{block}{Herman Melville}
+    A man of true science \ldots \pause uses but few hard words,
+    \pause and those only when none other will answer his
+    purpose; \pause whereas the smatterer in science\ldots
+    \pause thinks, that by mouthing hard words, he proves that
+    he understands hard things.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Pause}
+  \begin{block}{Herman Melville}
+    \onslide<1-3>{It is better to fail in originality, than to
+      succeed in imitation. }%
+    \onslide<2-3>{He who has never failed somewhere, that man
+      can not be great. }%
+    \onslide<3>{Failure is the true test of greatness.}
+  \end{block}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Alternatives}
+  \begin{block}{Herman Melville}
+    \alt<2>{%
+      A man of true science \ldots uses but few hard words,
+      \pause and those only when none other will answer his
+      purpose; whereas the smatterer in science\ldots thinks,
+      that by mouthing hard words, he proves that he understands
+      hard things.}%
+    {%
+      It is better to fail in originality, than to succeed in
+      imitation. %
+      He who has never failed somewhere, that man can not be
+      great. %
+      Failure is the true test of greatness.}
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Alternatives}
+  \begin{block}{Convex hull}
+    \alt<2>{%
+      \includegraphics[scale=.25]{convex}
+    }%
+    {%
+      \includegraphics[scale=.25]{concave}
+    }
+  \end{block}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Stepwise revelation}
+  \begin{minipage}{.45\linewidth}
+    \begin{itemize}
+    \item<1-> First step.
+    \item<2-> Second step.
+    \item<3-> Third step.
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}{.45\linewidth}
+    \begin{itemize}
+    \item<1-> First step.
+    \item<2-> Second step.
+    \item<3-> Third step.
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Stepwise revelation}
+  \begin{minipage}{.45\linewidth}
+    \begin{itemize}[<+->]
+    \item First step.
+    \item Second step.
+    \item Third step.
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}{.45\linewidth}
+    \begin{itemize}[<+- | alert@+>]
+    \item First step.
+    \item Second step.
+    \item Third step.
+    \end{itemize}
+  \end{minipage}
+\end{frame}
+
+\section{Graphics}
+\begin{frame}
+  \frametitle{Figure using tikz}
+  \begin{center}
+    A graphics will be placed here.
+    % \input{rule-learner}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Stepwise revelation}
+  \begin{tabular}{ll}
+    \onslide<1->{\includegraphics[width=2cm]{dijkstra.jpeg}} &     \onslide<1->{E W Dijkstra}\\
+    \onslide<2->{\includegraphics[width=2cm]{hoare.jpeg}} &     \onslide<2->{C A R Hoare}\\
+    \onslide<3->{\includegraphics[width=2cm]{maxwell.jpeg}} &     \onslide<3->{J C Maxwell}
+  \end{tabular}
+\end{frame}
+
+\section{Layout}
+\begin{frame}
+  \frametitle{Layout}
+  \begin{itemize}
+  \item Position the elements of the slide.
+  \item Not paragraph typesetting.
+  \item Control to place the elements in other desired places.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Course work}
+  \begin{tabular}{lll}
+    SNo & Code & Course Title\\\hline
+    1 & CP7009 & Machine Learning Techniques\\
+    2 & SE7003 & Machine Learning\\
+    3 & MA7155 & Applied Probability and Statistics \\    
+    4 & IF7203 & Data Warehousing and Data Mining \\
+    5 & SE7204 & Big Data Analytics\\
+    6 & CP7201 & Theoretical Foundations  of Computer Science\\
+    7 & CP7024 & Information Retrieval Techniques \\
+  \end{tabular} 
+\end{frame}
+
+\section{References}
+
+\begin{frame}[allowframebreaks]
+  \frametitle<presentation>{Reference}
+  \small
+  \begin{thebibliography}{10}
+    \beamertemplatebookbibitems
+  \bibitem{Marjan2009} Marjan Mernik, Dejan Hrncic, Barrett R. Bryant,
+    Alan P. Sprague, Jeff Gray, Qichao Liu, Faizan Javed.
+    \emph{Grammar Inference Algorithms and Applications in Software
+      Engineering}, 978-1-4244-4221-8/09, IEEE, 2009.
+  \bibitem{Colin2010} Colin de la Higuera.
+    \emph{Grammatical Inference: Learning Automata and Grammars},
+    Cambridge University Press, 2010.
+ 
+    \beamertemplatearticlebibitems
+    % Followed by interesting articles. Keep the list short.
+
+  \bibitem{Arianna2011} Arianna D'Ulizia, Fernando Ferri, Patrizia
+    Grifoni.
+    \emph{A survey of grammatical inference methods for natural
+      language learning},
+    Artificial Intelligence Review, DOI 10.1007/s10462-010-9199-1,
+    Springer, January 2011.
+  \bibitem{Harald2013} Harald Lampesberger. 
+    \emph{A Grammatical Inference Approach to Language-Based Anomaly
+      Detection in XML},
+    First Int Workshop on Emerging Cyberthreats and Countermeasures,
+    Regensburg, Germany, September 2013.
+  \end{thebibliography}
+\end{frame}
+
+\begin{frame}
+  \vfill
+  \begin{center}
+    Questions?
+  \end{center}
+  \vfill
+  
+\end{frame}
+\end{document}

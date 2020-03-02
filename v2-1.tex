@@ -1,0 +1,105 @@
+% Version 2: Theme, Logo
+\documentclass[11pt]{beamer}
+
+\usetheme{Frankfurt}
+\setbeamertemplate{navigation symbols}{}
+\logo{\includegraphics[height=0.5cm]{ssn-logo.jpg}}
+\title{Presentation in LaTeX}
+\author{R S Milton}
+\institute{
+  Department of Computer Science\\
+  SSN College of Engineering
+}
+
+\date{2 July 2014}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+
+\section{Quick presentation}
+
+\begin{frame}{Simple presentation}
+  \begin{block}{Why LaTeX?}
+    With LaTeX Beamer, we can make consistently looking presentation.
+  \end{block}
+  \begin{itemize}
+  \item Use \texttt{beamer} class.
+  \item Choose a theme.
+  \item Otherwise, usual LaTeX.
+  \end{itemize}
+\end{frame}
+
+
+\section{Graphics}
+\begin{frame}
+  \frametitle{Figure using tikz}
+  \begin{center}
+    A graphics will be placed here.
+    % \input{rule-learner}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}{Course work}
+
+  \begin{tabular}{lll}
+    SNo & Code & Course Title\\\hline
+    1 & CP7009 & Machine Learning Techniques\\
+    2 & SE7003 & Machine Learning\\
+    3 & MA7155 & Applied Probability and Statistics \\    
+    4 & IF7203 & Data Warehousing and Data Mining \\
+    5 & SE7204 & Big Data Analytics\\
+    6 & CP7201 & Theoretical Foundations  of Computer Science\\
+    7 & CP7024 & Information Retrieval Techniques \\
+  \end{tabular} 
+\end{frame}
+
+\section{References}
+
+\begin{frame}[allowframebreaks]
+  \frametitle<presentation>{Reference}
+  \small
+  \begin{thebibliography}{10}
+    \beamertemplatebookbibitems
+  \bibitem{Marjan2009} Marjan Mernik, Dejan Hrncic, Barrett R. Bryant,
+    Alan P. Sprague, Jeff Gray, Qichao Liu, Faizan Javed.
+    \emph{Grammar Inference Algorithms and Applications in Software
+      Engineering}, 978-1-4244-4221-8/09, IEEE, 2009.
+  \bibitem{Colin2010} Colin de la Higuera.
+    \emph{Grammatical Inference: Learning Automata and Grammars},
+    Cambridge University Press, 2010.
+ 
+    \beamertemplatearticlebibitems
+    % Followed by interesting articles. Keep the list short.
+
+  \bibitem{Arianna2011} Arianna D'Ulizia, Fernando Ferri, Patrizia
+    Grifoni.
+    \emph{A survey of grammatical inference methods for natural
+      language learning},
+    Artificial Intelligence Review, DOI 10.1007/s10462-010-9199-1,
+    Springer, January 2011.
+  \bibitem{Harald2013} Harald Lampesberger. 
+    \emph{A Grammatical Inference Approach to Language-Based Anomaly
+      Detection in XML},
+    First Int Workshop on Emerging Cyberthreats and Countermeasures,
+    Regensburg, Germany, September 2013.
+  \end{thebibliography}
+\end{frame}
+
+\begin{frame}
+  \vfill
+  \begin{center}
+    Questions?
+  \end{center}
+  \vfill
+  
+\end{frame}
+\end{document}

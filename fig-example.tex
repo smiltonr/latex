@@ -1,0 +1,113 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes.geometric,shapes.symbols,scopes}
+\usetikzlibrary{chains,decorations.pathmorphing,positioning,fit}
+\usetikzlibrary{decorations.shapes,calc,backgrounds}
+\usetikzlibrary{decorations.text,matrix}
+\usetikzlibrary{mindmap}
+\usetikzlibrary{fadings}
+
+\usepackage{graphicx}
+
+\colorlet{DarkRed}{red!70!black}
+\colorlet{DarkBlue}{blue!70!black}
+\colorlet{DarkGreen}{green!50!black}
+
+\tikzset{
+  every node/.style={very thick},
+  every path/.style={very thick},
+  orp/.style={
+    overlay,
+    remember picture,
+  },
+  jagged/.style={
+    decorate,
+    decoration={random steps,},
+  },
+  ripped note/.style={
+    draw=Fern!30!white,
+    jagged,
+    thin,
+    fill=Fern,
+    fill opacity=0.08,
+    fit=#1,
+  },
+  invisible state/.style={
+    rectangle,
+    minimum size=5mm,
+    rounded corners=1mm,
+    text height=1.75ex,
+    text depth=0.5ex,
+  },
+  state coloring/.style={
+    draw=#1,
+    top color=white,
+    bottom color=#1!20,
+  },
+  state/.style={
+    invisible state,
+    state coloring=#1,
+  },
+  state/.default={DarkGreen},
+  % start here/.style={
+  %   draw=black,
+  %   append after command={\tikzlastnode -- +(-.1,-.1)},
+  % },
+  state/.style={
+    rectangle,
+    minimum size=6mm,
+    rounded corners=.5mm,
+    draw=#1,
+    top color=white,
+    bottom color=#1!35,
+  },
+  start state pointer/.style={
+    draw=black,
+  },
+  entity/.style={
+    state,
+    font=\small,
+    text centered,
+    text width=#1cm,
+  },
+  process/.style={
+    state,
+    font=\small,
+    text centered,
+    text width=#1cm,
+    draw=DarkBlue,
+    inner color=DarkBlue!0!white,
+    outer color=DarkBlue!15!white,
+  },
+}
+
+\begin{document}
+
+% Define block styles
+\tikzstyle{block} = [rectangle, draw, draw=DarkBlue, inner
+color=DarkBlue!0!white, outer color=DarkBlue!15!white,
+%fill=red!20,
+text width=10em, thick,text centered, minimum height=2em] %
+
+\tikzstyle{line} = [draw, -latex']%
+\tikzstyle{oval} = [rectangle, draw, draw=DarkRed, inner
+color=DarkRed!0!white, outer color=DarkRed!15!white, text width=10em,
+thick, text centered, rounded corners, minimum height=2em] %
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{tikzpicture}[node distance = 1.7cm, auto]
+  % Place nodes
+  \node [oval](in) {IE Extractions};
+  \node [block, below of=in] (pc) {Predicate Counting};
+  \node [block, below of=pc] (dg) {Graph Construction};
+  \node [block, below of=dg] (gr) {Ground Rules Generation};
+  \node [oval, below of=gr] (for) {First Order Rules};
+  
+  % Draw edges
+  \draw [arrow] (in) -- (pc);
+  \draw [arrow] (pc) -- (dg);
+  \draw [arrow] (dg) -- (gr);
+  \draw [arrow] (gr) -- (for);
+\end{tikzpicture}
+\end{document}

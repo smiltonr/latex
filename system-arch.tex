@@ -1,0 +1,48 @@
+% \documentclass{article}
+
+% \usepackage{tikz}
+% \usetikzlibrary{chains,decorations.pathmorphing,positioning,fit}
+% \colorlet{DarkRed}{red!70!black}
+% \colorlet{DarkBlue}{blue!70!black}
+% \colorlet{DarkGreen}{green!50!black}
+
+% \begin{document}
+\tikzstyle{input} = [rectangle, draw=none, text width=10em, text
+height=18, text depth=1cm, text centered, inner sep=0pt, minimum
+height=1em]
+
+\tikzstyle{output} = [rectangle, draw=none, text width=10em, text
+height=15, text depth=1cm, text centered, inner sep=0pt,minimum
+height=1em]
+
+\tikzstyle{block} = [rectangle, draw=DarkBlue, inner
+color=DarkBlue!0!white, outer color=DarkBlue!15!white,text width=10em,
+text centered, rounded corners, minimum height=2em]
+
+\tikzstyle{arrow} = [thick,draw=DarkGreen,->,>=stealth]
+
+\begin{tikzpicture}[node distance = 1.8cm, scale=0.75, auto, every node/.style={transform shape}]
+
+  % Place nodes
+  \node [input](in) {Question, Instructor and Student Answers};%
+  \node [block, below of=in] (dep) {Dependency Parsing};%
+  \node [block, below of=dep] (nn) {Node-Node Matching};%
+  \node [block, left of=nn, node distance=5cm] (lex) {Lexical Semantic
+    Similarity};%
+  \node [block, below of=nn] (bp) {Bipartite Graph Construction and
+    Matching};%
+  \node [block, below of=bp] (svm) {SVM};%
+  \node [output, below of=svm](out) {Grade Predicted};
+
+  % Draw edges
+  \draw [arrow] (in) -- (dep);%
+  \draw [arrow] (dep) -- node {Dependency Graph}(nn);%
+  \draw [arrow] (nn) -- node {Matching Score} (bp);%
+%  \draw [arrow] (lex) |- node [near end] {Lexical Score} (svm);%
+  \draw [arrow] (lex) |- node  {Lexical Score} (svm);%
+  \draw [arrow] (bp) -- node {Alignment Score} (svm);%
+  \draw [arrow] (in) -| (lex);%
+  \draw [arrow] (svm) -- (out);
+\end{tikzpicture}
+%\end{document}
+

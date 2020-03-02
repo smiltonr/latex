@@ -1,0 +1,127 @@
+% \documentclass{beamer}
+
+% \usepackage{tikz}
+% \usetikzlibrary{chains,decorations.pathmorphing,positioning,fit}
+% \usetikzlibrary{decorations.shapes,calc,backgrounds}
+% \usetikzlibrary{decorations.text,matrix}
+% \usetikzlibrary{arrows,shapes.geometric,shapes.symbols,scopes}
+% \usetikzlibrary{mindmap}
+% \usetikzlibrary{fadings}
+
+% \usepackage{graphicx}
+
+% \colorlet{DarkRed}{red!70!black}
+% \colorlet{DarkBlue}{blue!70!black}
+% \colorlet{DarkGreen}{green!50!black}
+
+% \tikzset{
+%   every node/.style={very thick},
+%   every path/.style={very thick},
+%   orp/.style={
+%     overlay,
+%     remember picture,
+%   },
+%   jagged/.style={
+%     decorate,
+%     decoration={random steps,},
+%   },
+%   ripped note/.style={
+%     draw=Fern!30!white,
+%     jagged,
+%     thin,
+%     fill=Fern,
+%     fill opacity=0.08,
+%     fit=#1,
+%   },
+%   invisible state/.style={
+%     rectangle,
+%     minimum size=5mm,
+%     rounded corners=1mm,
+%     text height=1.75ex,
+%     text depth=0.5ex,
+%   },
+%   state coloring/.style={
+%     draw=#1,
+%     top color=white,
+%     bottom color=#1!20,
+%   },
+%   state/.style={
+%     invisible state,
+%     state coloring=#1,
+%   },
+%   state/.default={DarkGreen},
+%   % start here/.style={
+%   %   draw=black,
+%   %   append after command={\tikzlastnode -- +(-.1,-.1)},
+%   % },
+%   state/.style={
+%     rectangle,
+%     minimum size=6mm,
+%     rounded corners=.5mm,
+%     draw=#1,
+%     top color=white,
+%     bottom color=#1!35,
+%   },
+%   start state pointer/.style={
+%     draw=black,
+%   },
+%   entity/.style={
+%     state,
+%     font=\small,
+%     text centered,
+%     text width=#1cm,
+%   },
+%   process/.style={
+%     state,
+%     font=\small,
+%     text centered,
+%     text width=#1cm,
+%     draw=DarkBlue,
+%     inner color=DarkBlue!0!white,
+%     outer color=DarkBlue!15!white,
+%   },
+% }
+% \begin{document}
+\tikzstyle{input} = [rectangle, draw=none, text width=10em, text
+height=18, text depth=1cm, text centered, inner sep=0pt, minimum
+height=1em]
+
+\tikzstyle{output} = [rectangle, draw=none, text width=10em, text
+height=15, text depth=1cm, text centered, inner sep=0pt,minimum
+height=1em]
+
+\tikzstyle{block} = [rectangle, draw=DarkBlue, inner
+color=DarkBlue!0!white, outer color=DarkBlue!15!white,text width=10em, text centered,
+rounded corners, minimum height=2em]
+
+\tikzstyle{highlight} = [rectangle, draw=DarkRed, inner
+color=DarkRed!0!white, outer color=DarkRed!15!white,text width=10em, text centered,
+rounded corners, minimum height=2em]
+
+%\tikzstyle{line} = [draw, -latex']
+
+\tikzstyle{arrow} = [thick,draw=DarkGreen,->,>=stealth]
+
+\begin{tikzpicture}[node distance = 1.8cm, auto,scale=.8, every node/.style={transform shape}]
+  % Place nodes
+  \node [input,anchor=north east](in) {Question, Instructor and Student Answers};%
+  \node [highlight, below of=in] (dep) {Dependency Parsing};%
+  \node [block, below of=dep] (nn) {Node-Node Matching};%
+  \node [block, left of=nn, node distance=5cm] (lex) {Lexical Semantic
+    Similarity};%
+  \node [block, below of=nn] (bp) {Bipartite Graph Construction and
+    Matching};%
+  \node [block, below of=bp] (svm) {SVM};%
+  \node [output, below of=svm](out) {Grade Predicted};
+
+  % Draw edges
+  \draw [arrow] (in) -- (dep);%
+  \draw [arrow] (dep) -- node {Dependency Graph}(nn);%
+  \draw [arrow] (nn) -- node {Matching Score} (bp);%
+  \draw [arrow] (lex) |- node [near end] {Lexical Score} (svm);%
+  \draw [arrow] (bp) -- node {Alignment Score} (svm);%
+  \draw [arrow] (in) -| (lex);%
+  \draw [arrow] (svm) -- (out);
+\end{tikzpicture}
+%\end{document}
+

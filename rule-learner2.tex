@@ -1,0 +1,292 @@
+% /home/milton/csedept/talks/latex-2016/rule-learner2.jdr
+% Created by FlowframTk version 0.8.2
+% 18 Feb, 2016 1:21:11 PM
+\iffalse
+% This image may require the following commands in the preamble:
+\usepackage{ifpdf}
+\makeatletter
+\newcommand*{\jdroutline}[3]{%
+  \GenericWarning{}{text outline can't be implemented}#3%
+}%
+\ifpdf
+ \let\jdrorgmod\mod
+ \InputIfFileExists{pdf-trans}%
+ {%
+   \renewcommand*{\jdroutline}[3]{%
+     {\def\mod{\expandtwonumexprafter \modulo}%
+     \setbox\@tempboxa\hbox{##3}%
+     \boxgs{##1}{}\copy\@tempboxa
+     }%
+   }%
+ }{}
+ \let\mod\jdrorgmod
+\else
+ \IfFileExists{pst-char.sty}%
+ {%
+   \usepackage{pst-char}
+   \renewcommand*{\jdroutline}[3]{%
+     \begin{pspicture}(0,0)
+     \pscharpath[##2]{##3}
+     \end{pspicture}
+   }
+ }{}
+\fi
+\makeatother
+\usepackage{pgf}
+\usepgflibrary{decorations.text}
+% The normal size font is assumed to be 10pt
+% End of preamble information
+\fi
+\begin{pgfpicture}
+\pgfpathmoveto{\pgfpoint{4.5bp}{424.775591bp}}
+\pgfpathlineto{\pgfpoint{86.671875bp}{590.775591bp}}
+\pgfusepath{use as bounding box}
+\begin{pgfscope}
+\pgftransformcm{1.0}{-0.0}{0.0}{1.0}{\pgfpoint{45.0bp}{582.775591bp}}
+\pgftext[center,center]{\sffamily\mdseries\upshape\footnotesize\color[rgb]{0.0,0.0,0.0}IE Extractions}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.0bp}
+\pgfsetroundcap
+\pgfsetmiterjoin
+\pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{5.0bp}{590.275591bp}}
+\pgfpathlineto{\pgfpoint{5.0bp}{575.275591bp}}
+\pgfpathlineto{\pgfpoint{85.0bp}{575.275591bp}}
+\pgfpathlineto{\pgfpoint{85.0bp}{590.275591bp}}
+\pgfpathlineto{\pgfpoint{5.0bp}{590.275591bp}}
+\pgfclosepath
+\definecolor{jdrlinear-start-0}{rgb}{0.0,1.0,0.0}
+\definecolor{jdrlinear-end-0}{rgb}{0.0,1.0,0.0}
+\pgfdeclareverticalshading{jdrlinear0}{100bp}{color(0bp)=(jdrlinear-start-0); color(32.5bp)=(jdrlinear-start-0); color(67.5bp)=(jdrlinear-end-0); color(100bp)=(jdrlinear-end-0)}
+% pgf gradient shading mixed opacity has been averaged
+\pgfsetfillopacity{0.15}
+\pgfshadepath{jdrlinear0}{0.0}
+\pgfseteorule 
+\definecolor{strokepaint}{rgb}{0.0,1.0,0.0}\pgfsetstrokecolor{strokepaint}\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{1.0}{-0.0}{0.0}{1.0}{\pgfpoint{45.15625bp}{547.095903bp}}
+\pgftext[center,center]{\sffamily\mdseries\upshape\footnotesize\color[rgb]{0.0,0.0,0.0}Predicate Counting}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.0bp}
+\pgfsetroundcap
+\pgfsetmiterjoin
+\pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{5.15625bp}{555.275591bp}}
+\pgfpathlineto{\pgfpoint{5.15625bp}{540.275591bp}}
+\pgfpathlineto{\pgfpoint{85.15625bp}{540.275591bp}}
+\pgfpathlineto{\pgfpoint{85.15625bp}{555.275591bp}}
+\pgfpathlineto{\pgfpoint{5.15625bp}{555.275591bp}}
+\pgfclosepath
+\definecolor{jdrlinear-start-1}{rgb}{0.0,0.0,1.0}
+\definecolor{jdrlinear-end-1}{rgb}{0.0,0.0,1.0}
+\pgfdeclareverticalshading{jdrlinear1}{100bp}{color(0bp)=(jdrlinear-start-1); color(32.5bp)=(jdrlinear-start-1); color(67.5bp)=(jdrlinear-end-1); color(100bp)=(jdrlinear-end-1)}
+% pgf gradient shading mixed opacity has been averaged
+\pgfsetfillopacity{0.15}
+\pgfshadepath{jdrlinear1}{0.0}
+\pgfseteorule 
+\definecolor{strokepaint}{rgb}{0.0,0.0,1.0}\pgfsetstrokecolor{strokepaint}\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.0bp}
+\pgfsetbuttcap
+\pgfsetmiterjoin
+\pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{45.0bp}{575.275591bp}}
+\pgfpathlineto{\pgfpoint{45.0bp}{555.275591bp}}
+\definecolor{strokepaint}{rgb}{0.0,0.0,0.0}\pgfsetstrokecolor{strokepaint}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 28
+{\begin{pgfscope}
+\definecolor{fillpaint}{rgb}{0.0,0.0,0.0}\pgfsetfillcolor{fillpaint}
+\pgfpathqmoveto{47.453609bp}{560.525369bp}
+\pgfpathqlineto{44.56686bp}{555.525369bp}
+\pgfpathqlineto{45.0bp}{555.275591bp}
+\pgfpathqlineto{45.43314bp}{555.525369bp}
+\pgfpathqlineto{42.546391bp}{560.525369bp}
+\pgfpathqlineto{42.296612bp}{560.958509bp}
+\pgfpathqlineto{41.430328bp}{560.458952bp}
+\pgfpathqlineto{41.680107bp}{560.025812bp}
+\pgfpathqlineto{44.56686bp}{555.025812bp}
+\pgfpathqlineto{45.0bp}{554.274706bp}
+\pgfpathqlineto{45.43314bp}{555.025812bp}
+\pgfpathqlineto{48.319893bp}{560.025812bp}
+\pgfpathqlineto{48.569672bp}{560.458952bp}
+\pgfpathqlineto{47.703388bp}{560.958509bp}
+\pgfpathqlineto{47.453609bp}{560.525369bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgftransformcm{1.0}{-0.0}{0.0}{1.0}{\pgfpoint{46.171875bp}{512.775591bp}}
+\pgftext[center,center]{\sffamily\mdseries\upshape\footnotesize\color[rgb]{0.0,0.0,0.0}Graph Construction}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.0bp}
+\pgfsetroundcap
+\pgfsetmiterjoin
+\pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{6.171875bp}{520.275591bp}}
+\pgfpathlineto{\pgfpoint{6.171875bp}{505.275591bp}}
+\pgfpathlineto{\pgfpoint{86.171875bp}{505.275591bp}}
+\pgfpathlineto{\pgfpoint{86.171875bp}{520.275591bp}}
+\pgfpathlineto{\pgfpoint{6.171875bp}{520.275591bp}}
+\pgfclosepath
+\definecolor{jdrlinear-start-2}{rgb}{0.0,0.0,1.0}
+\definecolor{jdrlinear-end-2}{rgb}{0.0,0.0,1.0}
+\pgfdeclareverticalshading{jdrlinear2}{100bp}{color(0bp)=(jdrlinear-start-2); color(32.5bp)=(jdrlinear-start-2); color(67.5bp)=(jdrlinear-end-2); color(100bp)=(jdrlinear-end-2)}
+% pgf gradient shading mixed opacity has been averaged
+\pgfsetfillopacity{0.15}
+\pgfshadepath{jdrlinear2}{0.0}
+\pgfseteorule 
+\definecolor{strokepaint}{rgb}{0.0,0.0,1.0}\pgfsetstrokecolor{strokepaint}\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.0bp}
+\pgfsetroundcap
+\pgfsetmiterjoin
+\pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{5.0bp}{485.275591bp}}
+\pgfpathlineto{\pgfpoint{5.0bp}{460.275591bp}}
+\pgfpathlineto{\pgfpoint{85.0bp}{460.275591bp}}
+\pgfpathlineto{\pgfpoint{85.0bp}{485.275591bp}}
+\pgfpathlineto{\pgfpoint{5.0bp}{485.275591bp}}
+\pgfclosepath
+\definecolor{jdrlinear-start-3}{rgb}{0.0,0.0,1.0}
+\definecolor{jdrlinear-end-3}{rgb}{0.0,0.0,1.0}
+\pgfdeclareverticalshading{jdrlinear3}{100bp}{color(0bp)=(jdrlinear-start-3); color(32.5bp)=(jdrlinear-start-3); color(67.5bp)=(jdrlinear-end-3); color(100bp)=(jdrlinear-end-3)}
+% pgf gradient shading mixed opacity has been averaged
+\pgfsetfillopacity{0.15}
+\pgfshadepath{jdrlinear3}{0.0}
+\pgfseteorule 
+\definecolor{strokepaint}{rgb}{0.0,0.0,1.0}\pgfsetstrokecolor{strokepaint}\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{1.0}{-0.0}{0.0}{1.0}{\pgfpoint{45.0bp}{477.775591bp}}
+\pgftext[center,center]{\sffamily\mdseries\upshape\footnotesize\color[rgb]{0.0,0.0,0.0}Ground Rules}
+\end{pgfscope}
+\begin{pgfscope}
+\pgftransformcm{1.0}{-0.0}{0.0}{1.0}{\pgfpoint{45.0bp}{467.775591bp}}
+\pgftext[center,center]{\sffamily\mdseries\upshape\footnotesize\color[rgb]{0.0,0.0,0.0}Generation}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.0bp}
+\pgfsetbuttcap
+\pgfsetmiterjoin
+\pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{45.0bp}{540.275591bp}}
+\pgfpathlineto{\pgfpoint{45.0bp}{520.275591bp}}
+\definecolor{strokepaint}{rgb}{0.0,0.0,0.0}\pgfsetstrokecolor{strokepaint}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 28
+{\begin{pgfscope}
+\definecolor{fillpaint}{rgb}{0.0,0.0,0.0}\pgfsetfillcolor{fillpaint}
+\pgfpathqmoveto{47.453609bp}{525.525369bp}
+\pgfpathqlineto{44.56686bp}{520.525369bp}
+\pgfpathqlineto{45.0bp}{520.275591bp}
+\pgfpathqlineto{45.43314bp}{520.525369bp}
+\pgfpathqlineto{42.546391bp}{525.525369bp}
+\pgfpathqlineto{42.296612bp}{525.958513bp}
+\pgfpathqlineto{41.430328bp}{525.458955bp}
+\pgfpathqlineto{41.680107bp}{525.025812bp}
+\pgfpathqlineto{44.56686bp}{520.025812bp}
+\pgfpathqlineto{45.0bp}{519.274706bp}
+\pgfpathqlineto{45.43314bp}{520.025812bp}
+\pgfpathqlineto{48.319893bp}{525.025812bp}
+\pgfpathqlineto{48.569672bp}{525.458955bp}
+\pgfpathqlineto{47.703388bp}{525.958513bp}
+\pgfpathqlineto{47.453609bp}{525.525369bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgfsetlinewidth{1.0bp}
+\pgfsetbuttcap
+\pgfsetmiterjoin
+\pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{45.0bp}{505.275591bp}}
+\pgfpathlineto{\pgfpoint{45.0bp}{485.275591bp}}
+\definecolor{strokepaint}{rgb}{0.0,0.0,0.0}\pgfsetstrokecolor{strokepaint}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 28
+{\begin{pgfscope}
+\definecolor{fillpaint}{rgb}{0.0,0.0,0.0}\pgfsetfillcolor{fillpaint}
+\pgfpathqmoveto{47.453609bp}{490.525369bp}
+\pgfpathqlineto{44.56686bp}{485.525369bp}
+\pgfpathqlineto{45.0bp}{485.275591bp}
+\pgfpathqlineto{45.43314bp}{485.525369bp}
+\pgfpathqlineto{42.546391bp}{490.525369bp}
+\pgfpathqlineto{42.296612bp}{490.958513bp}
+\pgfpathqlineto{41.430328bp}{490.458955bp}
+\pgfpathqlineto{41.680107bp}{490.025812bp}
+\pgfpathqlineto{44.56686bp}{485.025812bp}
+\pgfpathqlineto{45.0bp}{484.274706bp}
+\pgfpathqlineto{45.43314bp}{485.025812bp}
+\pgfpathqlineto{48.319893bp}{490.025812bp}
+\pgfpathqlineto{48.569672bp}{490.458955bp}
+\pgfpathqlineto{47.703388bp}{490.958513bp}
+\pgfpathqlineto{47.453609bp}{490.525369bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\begin{pgfscope}
+\pgftransformcm{1.0}{-0.0}{0.0}{1.0}{\pgfpoint{45.0bp}{432.775591bp}}
+\pgftext[center,center]{\sffamily\mdseries\upshape\footnotesize\color[rgb]{0.0,0.0,0.0}First Order Rules}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.0bp}
+\pgfsetroundcap
+\pgfsetmiterjoin
+\pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{5.0bp}{440.275591bp}}
+\pgfpathlineto{\pgfpoint{5.0bp}{425.275591bp}}
+\pgfpathlineto{\pgfpoint{85.0bp}{425.275591bp}}
+\pgfpathlineto{\pgfpoint{85.0bp}{440.275591bp}}
+\pgfpathlineto{\pgfpoint{5.0bp}{440.275591bp}}
+\pgfclosepath
+\definecolor{jdrlinear-start-4}{rgb}{0.0,1.0,0.0}
+\definecolor{jdrlinear-end-4}{rgb}{0.0,1.0,0.0}
+\pgfdeclareverticalshading{jdrlinear4}{100bp}{color(0bp)=(jdrlinear-start-4); color(32.5bp)=(jdrlinear-start-4); color(67.5bp)=(jdrlinear-end-4); color(100bp)=(jdrlinear-end-4)}
+% pgf gradient shading mixed opacity has been averaged
+\pgfsetfillopacity{0.15}
+\pgfshadepath{jdrlinear4}{0.0}
+\pgfseteorule 
+\definecolor{strokepaint}{rgb}{0.0,1.0,0.0}\pgfsetstrokecolor{strokepaint}\pgfusepath{stroke}
+\end{pgfscope}
+\begin{pgfscope}
+\pgfsetlinewidth{1.0bp}
+\pgfsetbuttcap
+\pgfsetmiterjoin
+\pgfsetmiterlimit{10.0}
+\pgfpathmoveto{\pgfpoint{45.0bp}{460.275591bp}}
+\pgfpathlineto{\pgfpoint{45.0bp}{440.275591bp}}
+\definecolor{strokepaint}{rgb}{0.0,0.0,0.0}\pgfsetstrokecolor{strokepaint}
+\pgfusepath{stroke}
+\end{pgfscope}
+% marker type 28
+{\begin{pgfscope}
+\definecolor{fillpaint}{rgb}{0.0,0.0,0.0}\pgfsetfillcolor{fillpaint}
+\pgfpathqmoveto{47.453609bp}{445.525377bp}
+\pgfpathqlineto{44.56686bp}{440.525362bp}
+\pgfpathqlineto{45.0bp}{440.275591bp}
+\pgfpathqlineto{45.43314bp}{440.525362bp}
+\pgfpathqlineto{42.546391bp}{445.525377bp}
+\pgfpathqlineto{42.296612bp}{445.958513bp}
+\pgfpathqlineto{41.430328bp}{445.458955bp}
+\pgfpathqlineto{41.680107bp}{445.025804bp}
+\pgfpathqlineto{44.56686bp}{440.025819bp}
+\pgfpathqlineto{45.0bp}{439.274706bp}
+\pgfpathqlineto{45.43314bp}{440.025819bp}
+\pgfpathqlineto{48.319893bp}{445.025804bp}
+\pgfpathqlineto{48.569672bp}{445.458955bp}
+\pgfpathqlineto{47.703388bp}{445.958513bp}
+\pgfpathqlineto{47.453609bp}{445.525377bp}
+\pgfclosepath
+\pgfusepathqfill
+\end{pgfscope}}
+\end{pgfpicture}
